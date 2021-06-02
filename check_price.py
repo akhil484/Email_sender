@@ -27,7 +27,7 @@ if __name__=='__main__':
 	url="https://www.moneycontrol.com/india/stockpricequote/food-processing/britanniaindustries/BI"
 	source=urllib.request.urlopen(url).read()
 	soup=BeautifulSoup(source,"lxml")
-	div_tag=soup.find('span',class_='span_price_wrap')
+	div_tag=soup.find('span',id='sp_val')
 	price=div_tag.text
 	print(price)
 	if float(price)>3000:
